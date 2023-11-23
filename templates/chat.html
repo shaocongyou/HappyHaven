@@ -1,0 +1,326 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/CSS/base.css">
+    <link rel="stylesheet" href="../static/CSS/chat.css">
+    <script src="../static/JS/chat.js"></script>
+
+</head>
+
+<body>
+
+<div class="container" >
+    <div class="row clearfix">
+        <div class="col-md-2 column">
+            <div class="nav-logo" >
+                <img alt="HappyHaven" class="logo" src="../static/img/img.png"/>
+                <span class="logoName"> HappyHaven</span>
+
+            </div>
+
+
+
+            <!--            &lt;!&ndash; 根目录 &ndash;&gt;-->
+            <!--            <ul class="Subject" data-path="/" >-->
+            <!--                &lt;!&ndash; 根目录下的一个文件夹 Subject &ndash;&gt;-->
+            <!--                &lt;!&ndash; li下面有ul标签，代表这是一个文件夹 &ndash;&gt;-->
+            <!--                <li data-path="/Subject">-->
+            <!--                    <span>Subject</span>-->
+            <!--                    <button class="rename" onclick="renameTarget(event)">R</button>-->
+            <!--                    <button class="delete" onclick="deleteTarget(event)">D</button>-->
+            <!--                    &lt;!&ndash; 文件夹 Subject 的子文件和子文件夹 &ndash;&gt;-->
+            <!--                    <ul data-path="/Subject">-->
+            <!--                        <li data-path="/Subject/Chapter">-->
+            <!--                            <span>Chapter</span>-->
+            <!--                            <button class="rename" onclick="renameTarget(event)">R</button>-->
+            <!--                            <button class="delete" onclick="deleteTarget(event)">D</button>-->
+            <!--                        </li>-->
+            <!--                        <li data-path="/Subject/Test">-->
+            <!--                            <span>Test</span>-->
+            <!--                            <button class="rename" onclick="renameTarget(event)">R</button>-->
+            <!--                            <button class="delete" onclick="deleteTarget(event)">D</button>-->
+            <!--                        </li>-->
+            <!--                    </ul>-->
+            <!--                </li>-->
+            <!--            </ul>-->
+
+            <!--&lt;!&ndash; 根目录 &ndash;&gt;-->
+            <!--<ul class="Subject" data-path="/" onclick="liClickHandler(event)">-->
+            <!--    &lt;!&ndash; 根目录下的一个文件夹 Subject &ndash;&gt;-->
+            <!--    &lt;!&ndash; li下面有ul标签，代表这是一个文件夹 &ndash;&gt;-->
+            <!--    <li data-path="/Subject" onclick="liClickHandler(event)">-->
+            <!--        <span>Subject</span>-->
+            <!--        <button class="rename" onclick="renameTarget(event)">R</button>-->
+            <!--        <button class="delete" onclick="deleteTarget(event)">D</button>-->
+            <!--        &lt;!&ndash; 文件夹 Subject 的子文件和子文件夹 &ndash;&gt;-->
+            <!--        <ul data-path="/Subject">-->
+            <!--            <li data-path="/Subject/Chapter" onclick="liClickHandler(event)">-->
+            <!--                <span>Chapter</span>-->
+            <!--                <button class="rename" onclick="renameTarget(event)">R</button>-->
+            <!--                <button class="delete" onclick="deleteTarget(event)">D</button>-->
+            <!--            </li>-->
+            <!--            <li data-path="/Subject/Test" onclick="liClickHandler(event)">-->
+            <!--                <span>Test</span>-->
+            <!--                <button class="rename" onclick="renameTarget(event)">R</button>-->
+            <!--                <button class="delete" onclick="deleteTarget(event)">D</button>-->
+            <!--            </li>-->
+            <!--        </ul>-->
+            <!--    </li>-->
+            <!--</ul>-->
+
+
+
+            <!-- 根目录 -->
+            <ul class="Subject " data-path="/" onclick="liClickHandler(event)">
+                <div>
+                    <!-- 新建按钮 -->
+                    <button id="newFolderBtn" onclick="newFolder()" disabled style="width: 50%; ">New Folder</button>
+                    <button id="newFileBtn" onclick="newFile()" disabled style="width: 50%; float: right;">New File</button>
+
+                </div>
+
+                <!-- 根目录下的一个文件夹 Subject -->
+                <!-- li下面有ul标签，代表这是一个文件夹 -->
+                <li data-path="/Subject" onclick="liClickHandler(event)">
+                    <span>Subject</span>
+                    <button class="rename" onclick="renameTarget(event)">R</button>
+                    <button class="delete" onclick="deleteTarget(event)">D</button>
+                    <!-- 文件夹 Subject 的子文件和子文件夹 -->
+                    <ul data-path="/Subject">
+                        <li data-path="/Subject/Chapter" onclick="liClickHandler(event)">
+                            <span>Chapter</span>
+                            <button class="rename" onclick="renameTarget(event)">R</button>
+                            <button class="delete" onclick="deleteTarget(event)">D</button>
+                        </li>
+                        <li data-path="/Subject/Test" onclick="liClickHandler(event)">
+                            <span>Test</span>
+                            <button class="rename" onclick="renameTarget(event)">R</button>
+                            <button class="delete" onclick="deleteTarget(event)">D</button>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <div class="list-group">
+                <a href="#" class="list-group-item active open">登录/用户/登出</a>
+
+                <div class="list-group-item makeHH">
+                    看广告
+                </div>
+
+                <div class="list-group-item">
+                    <button class="badge">刷新</button> 3.14
+                </div>
+                <!--                <div class="list-group-item set">-->
+                <!--                    设置-->
+                <!--                </div>-->
+
+            </div>
+        </div>
+        <div class="col-md-6 column">
+            <h3>
+                File title
+            </h3>
+            <div class="view">
+                <ol contenteditable="true" class="list-unstyled">
+                    <li class="send">我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的我发送的</li>
+                    <li class="receive">服务器回应的</li>
+                    <li class="send">我发送的</li>
+                    <li class="receive">服务器回应的服    务器回应                  的服务器回应的             服                  务                  器                  回应的服务器回应的服务器回应的服务器回应的服务器回应的服务器回应的服务器回应的服务器回应的服务器回应的服务器回应的服务器回应的</li>
+                    <li class="send">我发送的</li>
+                    <li class="receive">服务器回应的</li>
+                    <li class="send">我发送的</li>
+                    <li class="receive">服务器回应的</li>
+                    <li class="send">我发送的</li>
+                    <li class="receive">服务器回应的</li>
+                    <li class="send">我发送的</li>
+                    <li class="receive">服务器回应的</li>
+                    <li class="send">我发送的</li>
+                    <li class="receive">服务器回应的</li>
+                    <li class="send">我发送的</li>
+                    <li class="receive">服务器回应的</li>
+                    <li class="send">我发送的</li>
+                    <li class="receive">服务器回应的</li>
+                </ol>
+            </div>
+
+            <form role="form" class="form-input" >
+                <p >Shift + Enter 换行 &nbsp;&nbsp;&nbsp; Ctrl + Enter 发送 &nbsp;&nbsp;&nbsp; Ctrl + '+' 放大 &nbsp;&nbsp;&nbsp; Ctrl + '-' 缩小</p>
+                <textarea id="messageEditorBox"  rows = 7; cols = 50;></textarea>
+                <br>
+                <input type="submit" value="发送" class="messageSend" onclick="addMessage()">
+            </form>
+        </div>
+        <div class="col-md-4 column">
+
+            <div class="passages" style="height: calc(100% - 370px);">
+                <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4>
+                        推荐的文章
+                    </h4>
+
+                    <div>
+                        <strong><span>【知乎】</span></strong>
+                        <p> Best check you self, you're not looking too good.</p>
+                    </div>
+                    <div>
+                        <span> <strong>赞</strong> <strong>999</strong> </span>
+                        <span> <strong>讨论</strong> <strong>666</strong> </span>
+                        <a href="#" class="alert-link" style="float: right;">去看看</a>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="row ad">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="广告" src="../static/img/ad.png" />
+                        <div class="caption">
+                            <h3>
+                                广告主题
+                            </h3>
+                            <p>
+                                广告推荐词
+                            </p>
+                            <p>
+                                <a class="btn btn-primary" href="#">去了解</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="广告" src="../static/img/ad.png" />
+                        <div class="caption">
+                            <h3>
+                                广告主题
+                            </h3>
+                            <p>
+                                广告推荐词
+                            </p>
+                            <p>
+                                <a class="btn btn-primary" href="#">去了解</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="广告" src="../static/img/ad.png" />
+                        <div class="caption">
+                            <h3>
+                                广告主题
+                            </h3>
+                            <p>
+                                广告推荐词
+                            </p>
+                            <p>
+                                <a class="btn btn-primary" href="#">去了解</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- login.html -->
+<div class="modal-box">
+    <div class="content">
+        <div class="title">
+            <span>欢迎</span>
+            <i class="close2">x</i>
+        </div>
+        <form class="welcome-form" method="post" action="{% url 'custom_login' %}">
+            {% csrf_token %}
+            <div class="form-input-username">
+                <label for="username">用户名：</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-input-password">
+                <label for="password">密&emsp;码：</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="form-input-button">
+                <button type="submit">登录</button>
+            </div>
+            <!-- 显示错误消息 -->
+            <div class="error-messages">
+                {% for message in messages %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div class="makeHH-modal-box">
+    <div class="img-box">
+
+        <img class="zfb" src="../static/img/zfb.jpg">
+
+    </div>
+
+    <div >
+        <button class="closeHH" style="display:block;margin: auto auto">关闭</button>
+    </div>
+</div>
+
+<!--&lt;!&ndash; 模态框 HTML 结构 &ndash;&gt;-->
+<!--<div class="setting-model-box">-->
+<!--  <div class="modal-header">-->
+<!--    <h2>设置</h2>-->
+<!--    <button class="close-modal">&times;</button>-->
+<!--  </div>-->
+<!--  <div class="modal-body">-->
+<!--    &lt;!&ndash; 明亮模式和黑暗模式选项 &ndash;&gt;-->
+<!--    <div>-->
+<!--      <label>明亮模式:</label>-->
+<!--      <input type="radio" name="mode" value="bright" checked>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label>黑暗模式:</label>-->
+<!--      <input type="radio" name="mode" value="dark">-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; 字体大小选项 &ndash;&gt;-->
+<!--    <div>-->
+<!--      <label for="font-size">字体大小:</label>-->
+<!--      <select id="font-size">-->
+<!--        <option value="small">小</option>-->
+<!--        <option value="medium">中</option>-->
+<!--        <option value="large">大</option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; 作者联系方式 &ndash;&gt;-->
+<!--    <div>-->
+<!--      <label for="contact">作者联系方式:</label>-->
+<!--      <input type="text" id="contact" value="2824947115@qq.com" readonly>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="modal-footer">-->
+<!--    <button class="save-settings">保存设置</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+</body>
+
+</html>

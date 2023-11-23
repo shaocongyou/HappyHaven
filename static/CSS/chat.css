@@ -1,0 +1,433 @@
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.row.clearfix {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.col-md-2.column {
+    height: 100%;
+}
+
+.col-md-4.column {
+    height: 100%;
+}
+
+
+.col-md-6.column {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group,
+.form-input,
+.ad {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*left与right共用，可以起到拉伸作用*/
+    /*top与bottom共用，可以起到拉伸作用*/
+
+    margin-bottom: 10px;
+    /* 可根据需要调整与底部的距离 */
+    /* 似乎对部分元素未生效，.ad*/
+    /* .ad 的 margin 被覆盖了*/
+    /* .form-input 的 margin 被行内style覆盖了*/
+
+}
+
+.ad.row {
+
+    padding: 0;
+    margin: 0;
+    /* 可根据需要调整与底部的距离 */
+
+}
+
+ol.list-unstyled {
+    display: flex;
+    flex-direction: column;
+    /*background-color: beige;*/
+    height: 100%;
+    outline: none;
+    width: 100%;
+}
+
+.view {
+    height: calc(100% - 93px - 230px);
+    /*flex-grow: 1; */
+    /*这将使得 .view 元素填充剩余的空间*/
+
+    /*background-color: beige;*/
+    overflow-y: scroll;
+    /*border: 5px solid pink;*/
+}
+
+.Subject{
+    overflow-y: auto;
+}
+
+.view::-webkit-scrollbar,
+.Subject::-webkit-scrollbar
+{
+    width: 5px;
+    height: 9px;
+}
+
+.view::-webkit-scrollbar-track
+{
+    background: transparent;
+}
+.Subject::-webkit-scrollbar-track
+{
+    background: transparent;
+}
+
+/*彩虹滚动轮道*/
+/*:root {*/
+/*    --track-color: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);*/
+/*}*/
+
+/*.view::-webkit-scrollbar-track {*/
+/*    background: var(--track-color);*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*.view::-webkit-scrollbar-thumb {*/
+/*    background: transparent;*/
+/*}*/
+
+/*彩虹滚轮*/
+/*有些突兀*/
+.view::-webkit-scrollbar-thumb,
+.Subject::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    /*background-image: -webkit-linear-gradient(90deg, red, yellow, blue);*/
+    background-color: grey;
+
+}
+
+
+/*奇数偶数选定样式*/
+/*ol.list-unstyled li:nth-child(odd) {*/
+/*    align-self: flex-end;*/
+/*    background-color: #6bee6b;*/
+/*}*/
+
+/*ol.list-unstyled li:nth-child(even) {*/
+/*    align-self: flex-start;*/
+/*    background-color: #f3eded;*/
+/*    border: 1px solid black;*/
+/*}*/
+
+/*发送方选定样式*/
+.send {
+    align-self: flex-end;
+    background-color: #6bee6b;
+}
+
+.receive {
+    align-self: flex-start;
+    background-color: #f3eded;
+    border: 1px solid black;
+}
+
+#messageEditorBox {
+    width: 100%;
+}
+
+.column {
+    border: 1px solid black;
+}
+
+/*主题li*/
+/*内容li不生效，后面有覆盖*/
+/*"div p"选择器会选取所有包含在"div"元素内的"p"元素。不包含div下面的p的p*/
+/*$(".Subject").find("li").css("color", "red");
+这行代码会使得所有在".Subject"元素下的"li"元素的文本颜色变为红色。*/
+li {
+    display: block;
+    font-size: 28px;
+    padding: 5px 10px 5px 5px;
+}
+
+li>span {
+    height: 100%;
+    display: inline;
+    font-size: 22px;
+}
+
+h3 {
+    border-bottom: 2px solid grey;
+    padding: 5px 0;
+    margin-bottom: 20px;
+}
+
+.list-unstyled > li {
+    border-radius: 8px;
+    padding: 2px 5px 5px 5px;
+    margin-bottom: 8px;
+
+    /* 添加以下两行实现文本换行 */
+    max-width: 50%;  /* 文本最长不超过50% */
+
+    white-space:pre-wrap;
+}
+
+.Subject {
+    padding: 0px;
+}
+
+.form-input {
+    width: 95%;
+    margin: 0 auto;
+    bottom: 12px;
+    border-top: 1px solid rgb(128, 128, 128);
+}
+
+p {
+    font-size: 20px;
+}
+
+#messageEditorBox {
+
+    resize: none;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+.logo {
+    height: 50%;
+    width: auto;
+}
+
+.logoName {
+    font-size: 27px;
+}
+
+.messageSend {
+    float: right;
+    height: 40px;
+    width: 76px;
+}
+
+.alert,
+.alert-success,
+.alert-dismissable {
+    margin-top: 0px;
+}
+
+.thumbnail {
+    margin-bottom: 10px;
+}
+
+.modal-box {
+    height: 46vh;
+    width: 46vh;
+    background-color: #ffffff;
+
+    /*脱离文档流*/
+    position: absolute;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    background-color: #ffffff;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.title>span {
+    margin: 0 auto;
+    /* 让"欢迎"文字在.title中居中 */
+    font-size: 35px;
+}
+
+.close2 {
+    margin-right: 0;
+    /* 移除右边距，这样它不会影响span的位置 */
+    font-size: 22px;
+}
+
+.welcome-form {
+    flex: 1;
+}
+
+
+
+.form-input-button {
+    display: flex;
+    justify-content: center;
+}
+
+
+.form-input-username {
+    display: flex;
+    align-items: center;
+}
+
+
+/*.form-input-username label {*/
+/*    width: max-content; !* 让label的宽度自适应其内容 *!*/
+/*    font-size: 14px; !* 调整字体大小，根据需要可以更改 *!*/
+/*}*/
+
+
+.form-input-username label {
+    margin: 0;
+    /* 重置边距 */
+    padding: 0;
+    /* 重置内边距 */
+    font-size: 14px;
+    /* 可以调整字体大小以适应需求 */
+    white-space: nowrap;
+}
+
+.form-input-username input {
+    margin: 0;
+    /* 重置边距 */
+    padding: 0;
+    /* 重置内边距 */
+    /*flex-grow: 1; !* 让输入框占据剩余空间 *!*/
+    width: 100%;
+    margin-left: 0;
+}
+
+
+.form-input-password {
+    display: flex;
+    align-items: center;
+}
+
+.form-input-password label {
+    margin: 0;
+    /* 重置边距 */
+    padding: 0;
+    /* 重置内边距 */
+    font-size: 14px;
+    /* 可以调整字体大小以适应需求 */
+    white-space: nowrap;
+}
+
+.form-input-password input {
+    margin: 0;
+    /* 重置边距 */
+    padding: 0;
+    /* 重置内边距 */
+    /*flex-grow: 1; !* 让输入框占据剩余空间 *!*/
+    width: 100%;
+    margin-left: 0;
+}
+
+.form-input-username {
+    margin-top: 5%;
+}
+
+.form-input-password {
+    margin-top: 15%;
+}
+
+.form-input-button {
+    margin-top: 15%;
+}
+
+.tip {
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #ffffff;
+    bottom: 0;
+}
+
+.welcome-form {
+    position: relative;
+    /* 设置 form 的定位为相对定位 */
+
+}
+
+.tip {
+    position: absolute;
+    /* 设置 tip 的定位为绝对定位 */
+    bottom: 0;
+    /* 让 tip 位于 form 的底部 */
+    width: 100%;
+    /* 设置 tip 的宽度为 100%，使其横跨 form 的宽度 */
+    text-align: center;
+    /* 设置文本对齐方式为居中 */
+}
+
+.modal-box {
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+
+.modal-box {
+    display: none;
+    padding: 30px 30px;
+}
+
+.makeHH-modal-box {
+    display: none;
+    /*脱离文档流*/
+    position: absolute;
+}
+
+.rename,
+.delete {
+    font-size: 22px;
+}
+
+body > div.modal-box > div > form > div.form-input-button > button{
+    width: 30%;
+    padding: 5px 3px;
+}
+
+.zfb{
+    width: 300px;
+    height: 400px;
+}
+
+.recently-clicked {
+    background-color: yellow;
+}
+
+.selected-folder {
+    background-color: greenyellow;
+}
+
+.selected-file {
+    background-color: yellow;
+}
+
+.Subject{
+    height: calc(100% - 80px - 137px);
+
+}
+
+span {
+    word-wrap: break-word; /* 允许文本换行 */
+}
+
